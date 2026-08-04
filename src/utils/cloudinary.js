@@ -20,6 +20,7 @@ const uploadOnCloudinary = async (imagePath) => {
     });
     // file has been uploaded successfully
     console.log("File uploaded successfully:", result.url);
+    fs.unlinkSync(imagePath);
     return result;
   } catch (error) {
     console.log(error);
